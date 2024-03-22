@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jetpa.cc</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <script src="https://unpkg.com/feather-icons"></script>
-    </head>
-    <body>
-        <a href="https://www.jetpa.cc/" class="home-button">
-            <img src="home-icon.png" alt="Home">
-        </a>
-        <header>
-            <img src="logo.png" alt="Jetpa.cc Logo" width="900" height="400">
-            <h1>Leveraging AI to alleviate everyday human inconveniences...</h1>
-            <button onclick="window.location.href='join-us.html'">Join Us</button>
-        </header>
-        <main>
-            <section id="mission">
-                <h2>Our Mission</h2>
-                <p>Jetpa.cc is dedicated to creating AI solutions that solve human problems, bridging the gap between technology and human creativity.</p>
-            </section>
-            <section id="projects">
-                <h2>What We're Working On...</h2>
-                <p>Coming soon!</p>
-            </section>
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <p>If you're interested in joining our team or partnering with us, reach out <a href="https://www.jetpa.cc/join-us.html" target="_blank">here.</p>
-            </section>
-        </main>
-        <footer>
-            <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
-        </footer>
-        <script>feather.replace();</script>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, {
-                    threshold: 0.1 // Adjust if needed
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jetpa.cc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <a href="https://www.jetpa.cc/" class="home-button">
+        <img src="home-icon.png" alt="Home">
+    </a>
+    <header>
+        <img src="logo.png" alt="Jetpa.cc Logo" width="900" height="400">
+        <h1>Leveraging AI to alleviate everyday human inconveniences...</h1>
+        <button onclick="window.location.href='join-us.html'">Join Us</button>
+    </header>
+    <main>
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>Jetpa.cc is dedicated to creating AI solutions that solve human problems, bridging the gap between technology and human creativity.</p>
+        </section>
+        <section id="projects">
+            <h2>What We're Working On...</h2>
+            <p>Coming soon!</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you're interested in joining our team or partnering with us, reach out <a href="https://www.jetpa.cc/join-us.html" target="_blank">here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
+    </footer>
+    <script>feather.replace();</script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
                 });
-            
-                document.querySelectorAll('section').forEach(section => {
-                    observer.observe(section);
-                });
+            }, {
+                threshold: 0.1 // Adjust if needed
             });
-            </script>
-            
-    </body>
+        
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+        </script>
+        
+</body>
 </html>
