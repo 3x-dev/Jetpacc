@@ -32,13 +32,13 @@
             }
         
             function handleSubmit(event) {
-                event.preventDefault(); // Prevent actual form submission
+                event.preventDefault();
         
                 if (!validateForm()) return false;
         
                 const currentTime = new Date().getTime();
-                if (currentTime - lastSubmissionTime < 300000) { // 5 minutes = 300000 milliseconds
-                    alert('You can only submit an application every 5 minutes. Please wait.');
+                if (currentTime - lastSubmissionTime < 600000) { // 10 minutes
+                    alert('You can only submit an application every 10 minutes. Please wait.');
                     return false;
                 }
         
@@ -74,9 +74,11 @@
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                <label for="email">LinkedIn or Website (optional):</label>
+                <input type="url" id="url" name="url">
                 <label for="interest">Why are you interested in joining our team?</label>
                 <textarea id="interest" name="interest" required></textarea>
-                <label for="experience">What experiences do you have in AI research?</label>
+                <label for="experience">What is your experience in AI research? (for researcher applicants)</label>
                 <textarea id="experience" name="experience" required></textarea>
                 <button type="submit" class="join-button">Submit Application</button>
             </form>
