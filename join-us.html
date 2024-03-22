@@ -10,10 +10,10 @@
     <!-- Load EmailJS library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS
-        emailjs.init("N5tp76Lh3xMgNAAYy");
-
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize EmailJS with your actual user ID
+            emailjs.init("N5tp76Lh3xMgNAAYy");
+
             const form = document.getElementById('contact-form');
 
             function validateForm() {
@@ -30,12 +30,12 @@
                 return true;
             }
         
-            function handleSubmit(event) {
+            function formSubmit(event) {
                 event.preventDefault();
         
                 if (!validateForm()) return false;
                     
-                // Send the email
+                // Send the email with your actual service ID and template ID
                 emailjs.sendForm('service_gz8q08j', 'template_d2dcwce', '#contact-form')
                     .then(response => {
                         alert('Thank you for your application! We will get back to you soon.');
@@ -46,7 +46,20 @@
                     });
             }
         
-            form.addEventListener('submit', handleSubmit);
+            form.addEventListener('submit', formSubmit);
+            
+            // IntersectionObserver for section visibility
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </head>
@@ -60,7 +73,7 @@
     </header>
     <main class="join-main">
         <section class="join-section">
-            <form id="contact-form" class="join-form" enctype="multipart/form-data">
+            <form id="contact-form" class="join-form" enctype="multipart/form-data" method="post" onsubmit="formSubmit(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -71,8 +84,8 @@
                 <textarea id="interest" name="interest" required></textarea>
                 <label for="experience">What is your experience in AI research? (for research applicants)</label>
                 <textarea id="experience" name="experience"></textarea>
-                <label for="resume">Your Resume/CV (if applicable)</label>
-                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                <!-- <label for="resume">Your Resume/CV (if applicable)</label>
+                <input type="file" id="resume" name="my_file"> -->
                 <button type="submit" class="join-button">Submit Application</button>
             </form>
         </section>
@@ -80,24 +93,5 @@
     <footer class="join-footer">
         <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1 // Adjust if needed
-            });
-        
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-        });
-        </script>
-        
 </body>
 </html>
