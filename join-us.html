@@ -80,5 +80,24 @@
     <footer class="join-footer">
         <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Adjust if needed
+            });
+        
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+        </script>
+        
 </body>
 </html>
