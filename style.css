@@ -34,31 +34,35 @@ button {
     background-color: #52019e;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 15px; /* Rounded appearance */
+    padding: 20px 40px; /* Larger button */
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added box-shadow to transition */
     text-transform: uppercase;
     font-weight: 600;
     margin-top: 20px;
+    font-size: 1.25em; /* Larger font size */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 button:hover {
     background-color: #2672f5;
     transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
 }
+
 
 main {
     padding: 20px;
     max-width: 960px;
     margin: auto;
-    overflow: auto;
+    overflow: visible; /* Ensure that shadows are not clipped */
 }
 
 section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
-    margin: 60px 0;
+    margin: 80px 0; /* Increased margin to allow shadow to be fully visible */
     padding: 40px;
     border-radius: 15px;
     border: 3px solid rgba(255, 255, 255, 0.2);
