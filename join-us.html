@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Join Us - Jetpa.cc</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        
-        <script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Jetpa.cc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Load EmailJS library first -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        emailjs.init("N5tp76Lh3xMgNAAYy");
+
+        document.addEventListener('DOMContentLoaded', function() {
             let lastSubmissionTime = 0;
-        
+            const form = document.getElementById('contact-form');
+
             function validateForm() {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const interest = document.getElementById('interest').value.trim();
-                const experience = document.getElementById('experience').value.trim();
+                const name = form.querySelector('#name').value.trim();
+                const email = form.querySelector('#email').value.trim();
+                const interest = form.querySelector('#interest').value.trim();
+                const experience = form.querySelector('#experience').value.trim();
         
                 if (!name || !email || !interest || !experience) {
                     alert('Please fill out all fields.');
@@ -38,7 +45,7 @@
                 lastSubmissionTime = currentTime;
                 
                 // Send the email
-                emailjs.sendForm('service_gz8q08j', 'template_d2dcwce', '#contact-form', 'N5tp76Lh3xMgNAAYy')
+                emailjs.sendForm('service_gz8q08j', 'template_d2dcwce', '#contact-form')
                     .then(response => {
                         alert('Thank you for your application! We will get back to you soon.');
                         window.location.href = 'https://www.jetpa.cc/';
@@ -48,43 +55,35 @@
                     });
             }
         
-            document.addEventListener('DOMContentLoaded', function() {
-                document.getElementById('contact-form').addEventListener('submit', handleSubmit);
-            });
-        
-            // Initialize EmailJS
-            emailjs.init("your_public_key");
-        </script>
-        
-    </head>
-    <body class="join-page">
-        <a href="https://www.jetpa.cc/" class="home-button">
-            <img src="home-icon.png" alt="Home">
-        </a>
-        <header class="join-header">
-            <h1>Join Us at Jetpa.cc</h1>
-            <h3>Become part of our team and solve daily hassles through innovative AI research.</h3>
-        </header>
-        <main class="join-main">
-            <section class="join-section">
-                <form class="join-form" onsubmit="handleSubmit(event)">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="interest">Why are you interested in joining our team?</label>
-                    <textarea id="interest" name="interest" required></textarea>
-                    <label for="experience">What experiences do you have in AI research?</label>
-                    <textarea id="experience" name="experience" required></textarea>
-                    <button type="submit" class="join-button">Submit Application</button>
-                </form>
-            </section>
-        </main>
-        <footer class="join-footer">
-            <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
-        </footer>
-
-        <!--=============== EMAIL JS ===============-->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    </body>
+            form.addEventListener('submit', handleSubmit);
+        });
+    </script>
+</head>
+<body class="join-page">
+    <a href="https://www.jetpa.cc/" class="home-button">
+        <img src="home-icon.png" alt="Home">
+    </a>
+    <header class="join-header">
+        <h1>Join Us at Jetpa.cc</h1>
+        <h3>Become part of our team and solve daily hassles through innovative AI research.</h3>
+    </header>
+    <main class="join-main">
+        <section class="join-section">
+            <form id="contact-form" class="join-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="interest">Why are you interested in joining our team?</label>
+                <textarea id="interest" name="interest" required></textarea>
+                <label for="experience">What experiences do you have in AI research?</label>
+                <textarea id="experience" name="experience" required></textarea>
+                <button type="submit" class="join-button">Submit Application</button>
+            </form>
+        </section>
+    </main>
+    <footer class="join-footer">
+        <p>Copyright &copy; 2024 <a href="https://www.jetpa.cc/" target="_blank">Jetpa.cc</a>. Made with &#10084;&#65039; in Silicon Valley.</p>
+    </footer>
+</body>
 </html>
