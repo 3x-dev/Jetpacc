@@ -26,6 +26,18 @@ header img {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    animation: swoopIn 2s ease-out;
+}
+
+@keyframes swoopIn {
+    0% {
+        transform: translateY(100vh); /* Start below the screen */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its final position */
+        opacity: 1;
+    }
 }
 
 button {
@@ -157,7 +169,7 @@ input[type="email"],
 }
 
 .join-button {
-    background-color: #6000a4;
+    background-color: #580197;
     color: white;
     border: none;
     padding: 10px;
