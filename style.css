@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-    background-color: #2672f5;
+    background-color: #290050;
     transform: translateY(-3px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -157,7 +157,7 @@ input[type="email"],
 }
 
 .join-button {
-    background-color: #4b0082;
+    background-color: #6000a4;
     color: white;
     border: none;
     padding: 10px;
