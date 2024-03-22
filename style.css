@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html {
+    height: 100%;
+    background-color: #2672f5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: linear-gradient(180deg, #2672f5 0%, #52019e 100%);
+    position: relative;
+}
+
+header {
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #52019e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2672f5;
+    transform: translateY(-3px);
+}
+
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: auto;
+    overflow: auto;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    margin: 60px 0;
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+section h2 {
+    color: #fff;
+}
+
+footer {
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+}
+
+.home-button img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    transition: opacity 0.3s;
+    border-radius: 50%; /* Make the image circular */
+}
+
+.home-button:hover img {
+    opacity: 0.8;
+}
