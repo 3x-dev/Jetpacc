@@ -154,6 +154,7 @@ a:hover {
 
 input[type="text"],
 input[type="email"],
+input[type="url"],
 .join-form textarea {
     padding: 10px;
     border-radius: 5px;
